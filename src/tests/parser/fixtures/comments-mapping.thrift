@@ -22,12 +22,23 @@ enum Operation {
 }
 
 /**
+ * Senum comment
+ */
+senum StringOnlyOperation {
+  ADD,
+  // Senum field comment
+  MULTIPLY
+}
+
+/**
  * Struct comment
  */
 struct Work {
   1: i32 num1 = 0,
   // Struct field comment
   2: Operation op,
+  // Struct field comment
+  3: StringOnlyOperation op1,
 }
 
 /**
