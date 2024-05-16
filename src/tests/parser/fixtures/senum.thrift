@@ -1,0 +1,4 @@
+senum Tes {
+    ONE,
+    TWO
+}

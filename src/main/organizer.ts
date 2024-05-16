@@ -4,6 +4,7 @@ import {
     ExceptionDefinition,
     IncludeDefinition,
     NamespaceDefinition,
+    SenumDefinition,
     ServiceDefinition,
     StructDefinition,
     SyntaxType,
@@ -17,6 +18,7 @@ export function organize(raw: ThriftDocument): ThriftDocument {
     const includes: Array<IncludeDefinition> = []
     const constants: Array<ConstDefinition> = []
     const enums: Array<EnumDefinition> = []
+    const senums: Array<SenumDefinition> = []
     const typedefs: Array<TypedefDefinition> = []
     const structs: Array<StructDefinition> = []
     const unions: Array<UnionDefinition> = []
@@ -43,6 +45,10 @@ export function organize(raw: ThriftDocument): ThriftDocument {
 
             case SyntaxType.EnumDefinition:
                 enums.push(next)
+                break
+
+            case SyntaxType.SenumDefinition:
+                senums.push(next)
                 break
 
             case SyntaxType.StructDefinition:

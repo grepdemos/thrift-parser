@@ -24,6 +24,8 @@ import {
     NamespaceDefinition,
     ParametersDefinition,
     PropertyAssignment,
+    SenumDefinition,
+    SenumMember,
     ServiceDefinition,
     SetType,
     StructDefinition,
@@ -76,6 +78,7 @@ function isStatementBeginning(token: Token): boolean {
         case SyntaxType.ServiceKeyword:
         case SyntaxType.TypedefKeyword:
         case SyntaxType.EnumKeyword:
+        case SyntaxType.SenumKeyword:
             return true
 
         default:
@@ -159,6 +162,8 @@ export function createParser(
 
             case SyntaxType.EnumKeyword:
                 return parseEnum()
+            case SyntaxType.SenumKeyword:
+                return parseSenum()
 
             case SyntaxType.CommentBlock:
             case SyntaxType.CommentLine:
@@ -646,6 +651,96 @@ export function createParser(
             type: SyntaxType.EnumMember,
             name: createIdentifier(nameToken.text, nameToken.loc),
             initializer,
+            annotations,
+            comments: getComments(),
+            loc,
+        }
+    }
+
+    // SenumDefinition → 'senum' Identifier '{' SenumMember* '} Annotations?'
+    function parseSenum(): SenumDefinition {
+        const leadingComments: Array<Comment> = getComments()
+        const _keywordToken: Token | null = consume(SyntaxType.SenumKeyword)
+        const keywordToken: Token = requireValue(
+            _keywordToken,
+            `'senum' keyword expected`,
+        )
+        const _nameToken: Token | null = consume(SyntaxType.Identifier)
+        const nameToken: Token = requireValue(
+            _nameToken,
+            `Expected identifier for senum definition`,
+        )
+
+        const openBrace: Token | null = consume(SyntaxType.LeftBraceToken)
+        requireValue(openBrace, `Expected opening brace`)
+
+        const members: Array<SenumMember> = parseSenumMembers()
+        const _closeBrace: Token | null = consume(SyntaxType.RightBraceToken)
+        const closeBrace: Token = requireValue(
+            _closeBrace,
+            `Expected closing brace`,
+        )
+
+        const annotations: Annotations | undefined = parseAnnotations()
+
+        const loc: TextLocation = {
+            start: keywordToken.loc.start,
+            end: closeBrace.loc.end,
+        }
+
+        return {
+            type: SyntaxType.SenumDefinition,
+            name: createIdentifier(nameToken.text, nameToken.loc),
+            members,
+            annotations,
+            comments: leadingComments,
+            loc,
+        }
+    }
+
+    function parseSenumMembers(): Array<SenumMember> {
+        const members: Array<SenumMember> = []
+        while (!check(SyntaxType.RightBraceToken)) {
+            if (check(SyntaxType.CommentBlock, SyntaxType.CommentLine)) {
+                advance()
+            } else {
+                members.push(parseSenumMember())
+
+                // consume list separator if there is one
+                readListSeparator()
+                if (isStatementBeginning(currentToken())) {
+                    throw reportError(
+                        `Closing curly brace expected, but new statement found`,
+                    )
+                } else if (check(SyntaxType.EOF)) {
+                    throw reportError(
+                        `Closing curly brace expected but reached end of file`,
+                    )
+                }
+            }
+        }
+
+        return members
+    }
+
+    // SenumMember → (Identifier Annotations? ListSeparator?)*
+    function parseSenumMember(): SenumMember {
+        const _nameToken: Token | null = consume(SyntaxType.Identifier)
+        const nameToken: Token = requireValue(
+            _nameToken,
+            `SenumMember must have identifier`,
+        )
+
+        const loc: TextLocation | null = createTextLocation(
+            nameToken.loc.start,
+            nameToken.loc.end,
+        )
+
+        const annotations: Annotations | undefined = parseAnnotations()
+
+        return {
+            type: SyntaxType.SenumMember,
+            name: createIdentifier(nameToken.text, nameToken.loc),
             annotations,
             comments: getComments(),
             loc,
