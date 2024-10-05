@@ -7,11 +7,17 @@ typedef i32 IntegerWithFormattedAnnotations (
 )
 typedef i32 ( another.annotation = "bar" ) annotatedType
 typedef AnnotatedEnum ( another.annotation = "bar" ) annotatedIdentifier
+typedef AnnotatedSenum ( another.annotation = "bar" ) annotatedSenumIdentifier
 typedef i32 IntegerWithTightlyFormattedAnnotations (annotation="foo",foo,bar,another.annotation="bar")
 const i32 ConstantWithAnnotation = 9853 ( annotation = "foo", another.annotation = "bar" )
 
 enum AnnotatedEnum {
   ONE = 1 ( annotation = "foo" ),
+  TWO ( annotation = "foo", another.annotation = "bar" )
+} ( annotation = "foo" )
+
+senum AnnotatedSenum {
+  ONE ( annotation = "foo" ),
   TWO ( annotation = "foo", another.annotation = "bar" )
 } ( annotation = "foo" )
 

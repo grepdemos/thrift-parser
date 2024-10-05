@@ -245,6 +245,32 @@ describe('Parser', () => {
         assert.deepEqual(objectify(thrift), expected)
     })
 
+    it('should correctly parse the syntax of a senum', () => {
+        const content: string = loadSource('senum')
+        const scanner: Scanner = createScanner(content)
+        const tokens: Array<Token> = scanner.scan()
+
+        const parser: Parser = createParser(tokens)
+        const thrift: ThriftDocument = parser.parse()
+
+        const expected: any = loadSolution('senum')
+
+        assert.deepEqual(objectify(thrift), expected)
+    })
+
+    it('should correctly parse an senum with field commented out', () => {
+        const content: string = loadSource('senum-commented')
+        const scanner: Scanner = createScanner(content)
+        const tokens: Array<Token> = scanner.scan()
+
+        const parser: Parser = createParser(tokens)
+        const thrift: ThriftDocument = parser.parse()
+
+        const expected: any = loadSolution('senum-commented')
+
+        assert.deepEqual(objectify(thrift), expected)
+    })
+
     it('should correctly parse the syntax of a simple service', () => {
         const content: string = loadSource('service')
         const scanner: Scanner = createScanner(content)

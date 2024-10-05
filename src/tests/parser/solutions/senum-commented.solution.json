@@ -1,0 +1,71 @@
+{
+    "type": "ThriftDocument",
+    "body": [
+        {
+            "type": "SenumDefinition",
+            "name": {
+                "type": "Identifier",
+                "value": "Tes",
+                "loc": {
+                    "start": {
+                        "line": 1,
+                        "column": 7,
+                        "index": 6
+                    },
+                    "end": {
+                        "line": 1,
+                        "column": 10,
+                        "index": 9
+                    }
+                }
+            },
+            "members": [
+                {
+                    "type": "SenumMember",
+                    "name": {
+                        "type": "Identifier",
+                        "value": "ONE",
+                        "loc": {
+                            "start": {
+                                "line": 2,
+                                "column": 5,
+                                "index": 16
+                            },
+                            "end": {
+                                "line": 2,
+                                "column": 8,
+                                "index": 19
+                            }
+                        }
+                    },
+                    "comments": [],
+                    "loc": {
+                        "start": {
+                            "line": 2,
+                            "column": 5,
+                            "index": 16
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 8,
+                            "index": 19
+                        }
+                    }
+                }
+            ],
+            "comments": [],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "index": 0
+                },
+                "end": {
+                    "line": 4,
+                    "column": 2,
+                    "index": 32
+                }
+            }
+        }
+    ]
+}

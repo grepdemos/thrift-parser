@@ -61,6 +61,7 @@ export type ThriftStatement =
     | ConstDefinition
     | StructDefinition
     | EnumDefinition
+    | SenumDefinition
     | ExceptionDefinition
     | UnionDefinition
     | TypedefDefinition
@@ -220,6 +221,19 @@ export interface EnumMember extends PrimarySyntax {
     annotations?: Annotations
 }
 
+export interface SenumDefinition extends PrimarySyntax {
+    type: SyntaxType.SenumDefinition
+    name: Identifier
+    members: Array<SenumMember>
+    annotations?: Annotations
+}
+
+export interface SenumMember extends PrimarySyntax {
+    type: SyntaxType.SenumMember
+    name: Identifier
+    annotations?: Annotations
+}
+
 export interface TypedefDefinition extends PrimarySyntax {
     type: SyntaxType.TypedefDefinition
     name: Identifier
@@ -337,6 +351,7 @@ export enum SyntaxType {
     ConstDefinition = 'ConstDefinition',
     StructDefinition = 'StructDefinition',
     EnumDefinition = 'EnumDefinition',
+    SenumDefinition = 'SenumDefinition',
     ServiceDefinition = 'ServiceDefinition',
     ExceptionDefinition = 'ExceptionDefinition',
     TypedefDefinition = 'TypedefDefinition',
@@ -363,6 +378,7 @@ export enum SyntaxType {
     ConstList = 'ConstList',
     ConstMap = 'ConstMap',
     EnumMember = 'EnumMember',
+    SenumMember = 'SenumMember',
 
     // Literals
     CommentLine = 'CommentLine',

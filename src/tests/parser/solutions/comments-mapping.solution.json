@@ -412,102 +412,39 @@
       }
     },
     {
-      "type": "StructDefinition",
+      "type": "SenumDefinition",
       "name": {
         "type": "Identifier",
-        "value": "Work",
+        "value": "StringOnlyOperation",
         "loc": {
           "start": {
             "line": 27,
-            "column": 8,
-            "index": 307
+            "column": 7,
+            "index": 305
           },
           "end": {
             "line": 27,
-            "column": 12,
-            "index": 311
+            "column": 26,
+            "index": 324
           }
         }
       },
-      "fields": [
+      "members": [
         {
-          "type": "FieldDefinition",
+          "type": "SenumMember",
           "name": {
             "type": "Identifier",
-            "value": "num1",
-            "loc": {
-              "start": {
-                "line": 28,
-                "column": 10,
-                "index": 323
-              },
-              "end": {
-                "line": 28,
-                "column": 14,
-                "index": 327
-              }
-            }
-          },
-          "fieldID": {
-            "type": "FieldID",
-            "value": 1,
+            "value": "ADD",
             "loc": {
               "start": {
                 "line": 28,
                 "column": 3,
-                "index": 316
+                "index": 329
               },
               "end": {
-                "line": 28,
-                "column": 5,
-                "index": 318
-              }
-            }
-          },
-          "fieldType": {
-            "type": "I32Keyword",
-            "loc": {
-              "start": {
                 "line": 28,
                 "column": 6,
-                "index": 319
-              },
-              "end": {
-                "line": 28,
-                "column": 9,
-                "index": 322
-              }
-            }
-          },
-          "requiredness": null,
-          "defaultValue": {
-            "type": "IntConstant",
-            "value": {
-              "type": "IntegerLiteral",
-              "value": "0",
-              "loc": {
-                "start": {
-                  "line": 28,
-                  "column": 17,
-                  "index": 330
-                },
-                "end": {
-                  "line": 28,
-                  "column": 18,
-                  "index": 331
-                }
-              }
-            },
-            "loc": {
-              "start": {
-                "line": 28,
-                "column": 17,
-                "index": 330
-              },
-              "end": {
-                "line": 28,
-                "column": 18,
-                "index": 331
+                "index": 332
               }
             }
           },
@@ -516,36 +453,20 @@
             "start": {
               "line": 28,
               "column": 3,
-              "index": 316
+              "index": 329
             },
             "end": {
               "line": 28,
-              "column": 19,
+              "column": 6,
               "index": 332
             }
           }
         },
         {
-          "type": "FieldDefinition",
+          "type": "SenumMember",
           "name": {
             "type": "Identifier",
-            "value": "op",
-            "loc": {
-              "start": {
-                "line": 30,
-                "column": 16,
-                "index": 374
-              },
-              "end": {
-                "line": 30,
-                "column": 18,
-                "index": 376
-              }
-            }
-          },
-          "fieldID": {
-            "type": "FieldID",
-            "value": 2,
+            "value": "MULTIPLY",
             "loc": {
               "start": {
                 "line": 30,
@@ -554,42 +475,24 @@
               },
               "end": {
                 "line": 30,
-                "column": 5,
-                "index": 363
+                "column": 11,
+                "index": 369
               }
             }
           },
-          "fieldType": {
-            "type": "Identifier",
-            "value": "Operation",
-            "loc": {
-              "start": {
-                "line": 30,
-                "column": 6,
-                "index": 364
-              },
-              "end": {
-                "line": 30,
-                "column": 15,
-                "index": 373
-              }
-            }
-          },
-          "requiredness": null,
-          "defaultValue": null,
           "comments": [
             {
               "type": "CommentLine",
-              "value": "Struct field comment",
+              "value": "Senum field comment",
               "loc": {
                 "start": {
                   "line": 29,
                   "column": 3,
-                  "index": 335
+                  "index": 336
                 },
                 "end": {
                   "line": 29,
-                  "column": 26,
+                  "column": 25,
                   "index": 358
                 }
               }
@@ -603,8 +506,322 @@
             },
             "end": {
               "line": 30,
+              "column": 11,
+              "index": 369
+            }
+          }
+        }
+      ],
+      "comments": [
+        {
+          "type": "CommentBlock",
+          "value": [
+            "Senum comment"
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 1,
+              "index": 274
+            },
+            "end": {
+              "line": 26,
+              "column": 4,
+              "index": 298
+            }
+          }
+        }
+      ],
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 1,
+          "index": 299
+        },
+        "end": {
+          "line": 31,
+          "column": 2,
+          "index": 371
+        }
+      }
+    },
+    {
+      "type": "StructDefinition",
+      "name": {
+        "type": "Identifier",
+        "value": "Work",
+        "loc": {
+          "start": {
+            "line": 36,
+            "column": 8,
+            "index": 406
+          },
+          "end": {
+            "line": 36,
+            "column": 12,
+            "index": 410
+          }
+        }
+      },
+      "fields": [
+        {
+          "type": "FieldDefinition",
+          "name": {
+            "type": "Identifier",
+            "value": "num1",
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 10,
+                "index": 422
+              },
+              "end": {
+                "line": 37,
+                "column": 14,
+                "index": 426
+              }
+            }
+          },
+          "fieldID": {
+            "type": "FieldID",
+            "value": 1,
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 3,
+                "index": 415
+              },
+              "end": {
+                "line": 37,
+                "column": 5,
+                "index": 417
+              }
+            }
+          },
+          "fieldType": {
+            "type": "I32Keyword",
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 6,
+                "index": 418
+              },
+              "end": {
+                "line": 37,
+                "column": 9,
+                "index": 421
+              }
+            }
+          },
+          "requiredness": null,
+          "defaultValue": {
+            "type": "IntConstant",
+            "value": {
+              "type": "IntegerLiteral",
+              "value": "0",
+              "loc": {
+                "start": {
+                  "line": 37,
+                  "column": 17,
+                  "index": 429
+                },
+                "end": {
+                  "line": 37,
+                  "column": 18,
+                  "index": 430
+                }
+              }
+            },
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 17,
+                "index": 429
+              },
+              "end": {
+                "line": 37,
+                "column": 18,
+                "index": 430
+              }
+            }
+          },
+          "comments": [],
+          "loc": {
+            "start": {
+              "line": 37,
+              "column": 3,
+              "index": 415
+            },
+            "end": {
+              "line": 37,
               "column": 19,
-              "index": 377
+              "index": 431
+            }
+          }
+        },
+        {
+          "type": "FieldDefinition",
+          "name": {
+            "type": "Identifier",
+            "value": "op",
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 16,
+                "index": 473
+              },
+              "end": {
+                "line": 39,
+                "column": 18,
+                "index": 475
+              }
+            }
+          },
+          "fieldID": {
+            "type": "FieldID",
+            "value": 2,
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 3,
+                "index": 460
+              },
+              "end": {
+                "line": 39,
+                "column": 5,
+                "index": 462
+              }
+            }
+          },
+          "fieldType": {
+            "type": "Identifier",
+            "value": "Operation",
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 6,
+                "index": 463
+              },
+              "end": {
+                "line": 39,
+                "column": 15,
+                "index": 472
+              }
+            }
+          },
+          "requiredness": null,
+          "defaultValue": null,
+          "comments": [
+            {
+              "type": "CommentLine",
+              "value": "Struct field comment",
+              "loc": {
+                "start": {
+                  "line": 38,
+                  "column": 3,
+                  "index": 434
+                },
+                "end": {
+                  "line": 38,
+                  "column": 26,
+                  "index": 457
+                }
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 3,
+              "index": 460
+            },
+            "end": {
+              "line": 39,
+              "column": 19,
+              "index": 476
+            }
+          }
+        },
+        {
+          "type": "FieldDefinition",
+          "name": {
+            "type": "Identifier",
+            "value": "op1",
+            "loc": {
+              "start": {
+                "line": 41,
+                "column": 26,
+                "index": 528
+              },
+              "end": {
+                "line": 41,
+                "column": 29,
+                "index": 531
+              }
+            }
+          },
+          "fieldID": {
+            "type": "FieldID",
+            "value": 3,
+            "loc": {
+              "start": {
+                "line": 41,
+                "column": 3,
+                "index": 505
+              },
+              "end": {
+                "line": 41,
+                "column": 5,
+                "index": 507
+              }
+            }
+          },
+          "fieldType": {
+            "type": "Identifier",
+            "value": "StringOnlyOperation",
+            "loc": {
+              "start": {
+                "line": 41,
+                "column": 6,
+                "index": 508
+              },
+              "end": {
+                "line": 41,
+                "column": 25,
+                "index": 527
+              }
+            }
+          },
+          "requiredness": null,
+          "defaultValue": null,
+          "comments": [
+            {
+              "type": "CommentLine",
+              "value": "Struct field comment",
+              "loc": {
+                "start": {
+                  "line": 40,
+                  "column": 3,
+                  "index": 479
+                },
+                "end": {
+                  "line": 40,
+                  "column": 26,
+                  "index": 502
+                }
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 3,
+              "index": 505
+            },
+            "end": {
+              "line": 41,
+              "column": 30,
+              "index": 532
             }
           }
         }
@@ -617,28 +834,28 @@
           ],
           "loc": {
             "start": {
-              "line": 24,
+              "line": 33,
               "column": 1,
-              "index": 274
+              "index": 373
             },
             "end": {
-              "line": 26,
+              "line": 35,
               "column": 4,
-              "index": 299
+              "index": 398
             }
           }
         }
       ],
       "loc": {
         "start": {
-          "line": 27,
+          "line": 36,
           "column": 1,
-          "index": 300
+          "index": 399
         },
         "end": {
-          "line": 31,
+          "line": 42,
           "column": 2,
-          "index": 379
+          "index": 534
         }
       }
     },
@@ -649,14 +866,14 @@
         "value": "Calculator",
         "loc": {
           "start": {
-            "line": 36,
+            "line": 47,
             "column": 9,
-            "index": 416
+            "index": 571
           },
           "end": {
-            "line": 36,
+            "line": 47,
             "column": 19,
-            "index": 426
+            "index": 581
           }
         }
       },
@@ -665,14 +882,14 @@
         "value": "shared.SharedService",
         "loc": {
           "start": {
-            "line": 36,
+            "line": 47,
             "column": 20,
-            "index": 427
+            "index": 582
           },
           "end": {
-            "line": 36,
+            "line": 47,
             "column": 48,
-            "index": 455
+            "index": 610
           }
         }
       },
@@ -684,14 +901,14 @@
             "value": "add",
             "loc": {
               "start": {
-                "line": 42,
+                "line": 53,
                 "column": 8,
-                "index": 503
+                "index": 658
               },
               "end": {
-                "line": 42,
+                "line": 53,
                 "column": 11,
-                "index": 506
+                "index": 661
               }
             }
           },
@@ -699,14 +916,14 @@
             "type": "I32Keyword",
             "loc": {
               "start": {
-                "line": 42,
+                "line": 53,
                 "column": 4,
-                "index": 499
+                "index": 654
               },
               "end": {
-                "line": 42,
+                "line": 53,
                 "column": 7,
-                "index": 502
+                "index": 657
               }
             }
           },
@@ -718,14 +935,14 @@
                 "value": "num1",
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 24,
-                    "index": 519
+                    "index": 674
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 28,
-                    "index": 523
+                    "index": 678
                   }
                 }
               },
@@ -734,14 +951,14 @@
                 "value": 1,
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 12,
-                    "index": 507
+                    "index": 662
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 14,
-                    "index": 509
+                    "index": 664
                   }
                 }
               },
@@ -750,14 +967,14 @@
                 "value": "MyInteger",
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 14,
-                    "index": 509
+                    "index": 664
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 23,
-                    "index": 518
+                    "index": 673
                   }
                 }
               },
@@ -766,14 +983,14 @@
               "comments": [],
               "loc": {
                 "start": {
-                  "line": 42,
+                  "line": 53,
                   "column": 12,
-                  "index": 507
+                  "index": 662
                 },
                 "end": {
-                  "line": 42,
+                  "line": 53,
                   "column": 29,
-                  "index": 524
+                  "index": 679
                 }
               }
             },
@@ -784,14 +1001,14 @@
                 "value": "num2",
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 36,
-                    "index": 531
+                    "index": 686
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 40,
-                    "index": 535
+                    "index": 690
                   }
                 }
               },
@@ -800,14 +1017,14 @@
                 "value": 2,
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 30,
-                    "index": 525
+                    "index": 680
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 32,
-                    "index": 527
+                    "index": 682
                   }
                 }
               },
@@ -815,14 +1032,14 @@
                 "type": "I32Keyword",
                 "loc": {
                   "start": {
-                    "line": 42,
+                    "line": 53,
                     "column": 32,
-                    "index": 527
+                    "index": 682
                   },
                   "end": {
-                    "line": 42,
+                    "line": 53,
                     "column": 35,
-                    "index": 530
+                    "index": 685
                   }
                 }
               },
@@ -831,14 +1048,14 @@
               "comments": [],
               "loc": {
                 "start": {
-                  "line": 42,
+                  "line": 53,
                   "column": 30,
-                  "index": 525
+                  "index": 680
                 },
                 "end": {
-                  "line": 42,
+                  "line": 53,
                   "column": 40,
-                  "index": 535
+                  "index": 690
                 }
               }
             }
@@ -852,14 +1069,14 @@
               ],
               "loc": {
                 "start": {
-                  "line": 38,
+                  "line": 49,
                   "column": 3,
-                  "index": 461
+                  "index": 616
                 },
                 "end": {
-                  "line": 40,
+                  "line": 51,
                   "column": 6,
-                  "index": 494
+                  "index": 649
                 }
               }
             }
@@ -868,14 +1085,14 @@
           "modifiers": [],
           "loc": {
             "start": {
-              "line": 42,
+              "line": 53,
               "column": 4,
-              "index": 499
+              "index": 654
             },
             "end": {
-              "line": 42,
+              "line": 53,
               "column": 42,
-              "index": 537
+              "index": 692
             }
           }
         },
@@ -886,14 +1103,14 @@
             "value": "zip",
             "loc": {
               "start": {
-                "line": 47,
+                "line": 58,
                 "column": 16,
-                "index": 591
+                "index": 746
               },
               "end": {
-                "line": 47,
+                "line": 58,
                 "column": 19,
-                "index": 594
+                "index": 749
               }
             }
           },
@@ -901,14 +1118,14 @@
             "type": "VoidKeyword",
             "loc": {
               "start": {
-                "line": 47,
+                "line": 58,
                 "column": 11,
-                "index": 586
+                "index": 741
               },
               "end": {
-                "line": 47,
+                "line": 58,
                 "column": 15,
-                "index": 590
+                "index": 745
               }
             }
           },
@@ -920,14 +1137,14 @@
                 "value": "vasia",
                 "loc": {
                   "start": {
-                    "line": 47,
+                    "line": 58,
                     "column": 26,
-                    "index": 601
+                    "index": 756
                   },
                   "end": {
-                    "line": 47,
+                    "line": 58,
                     "column": 31,
-                    "index": 606
+                    "index": 761
                   }
                 }
               },
@@ -936,14 +1153,14 @@
                 "value": 1,
                 "loc": {
                   "start": {
-                    "line": 47,
+                    "line": 58,
                     "column": 20,
-                    "index": 595
+                    "index": 750
                   },
                   "end": {
-                    "line": 47,
+                    "line": 58,
                     "column": 22,
-                    "index": 597
+                    "index": 752
                   }
                 }
               },
@@ -951,14 +1168,14 @@
                 "type": "I32Keyword",
                 "loc": {
                   "start": {
-                    "line": 47,
+                    "line": 58,
                     "column": 22,
-                    "index": 597
+                    "index": 752
                   },
                   "end": {
-                    "line": 47,
+                    "line": 58,
                     "column": 25,
-                    "index": 600
+                    "index": 755
                   }
                 }
               },
@@ -967,14 +1184,14 @@
               "comments": [],
               "loc": {
                 "start": {
-                  "line": 47,
+                  "line": 58,
                   "column": 20,
-                  "index": 595
+                  "index": 750
                 },
                 "end": {
-                  "line": 47,
+                  "line": 58,
                   "column": 31,
-                  "index": 606
+                  "index": 761
                 }
               }
             }
@@ -988,14 +1205,14 @@
               ],
               "loc": {
                 "start": {
-                  "line": 44,
+                  "line": 55,
                   "column": 4,
-                  "index": 542
+                  "index": 697
                 },
                 "end": {
-                  "line": 46,
+                  "line": 57,
                   "column": 6,
-                  "index": 575
+                  "index": 730
                 }
               }
             }
@@ -1007,28 +1224,28 @@
               "text": "oneway",
               "loc": {
                 "start": {
-                  "line": 47,
+                  "line": 58,
                   "column": 4,
-                  "index": 579
+                  "index": 734
                 },
                 "end": {
-                  "line": 47,
+                  "line": 58,
                   "column": 10,
-                  "index": 585
+                  "index": 740
                 }
               }
             }
           ],
           "loc": {
             "start": {
-              "line": 47,
+              "line": 58,
               "column": 11,
-              "index": 586
+              "index": 741
             },
             "end": {
-              "line": 47,
+              "line": 58,
               "column": 32,
-              "index": 607
+              "index": 762
             }
           }
         }
@@ -1041,28 +1258,28 @@
           ],
           "loc": {
             "start": {
-              "line": 33,
+              "line": 44,
               "column": 1,
-              "index": 381
+              "index": 536
             },
             "end": {
-              "line": 35,
+              "line": 46,
               "column": 4,
-              "index": 407
+              "index": 562
             }
           }
         }
       ],
       "loc": {
         "start": {
-          "line": 36,
+          "line": 47,
           "column": 1,
-          "index": 408
+          "index": 563
         },
         "end": {
-          "line": 49,
+          "line": 60,
           "column": 2,
-          "index": 610
+          "index": 765
         }
       }
     }
